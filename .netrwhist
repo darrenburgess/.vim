@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/darrenburgess/Desktop/launch_school/intro_to_programming/04_methods'
+let g:netrw_dirhist_2='/Users/darrenburgess/Desktop/launch_school/intro_to_programming/07_loops'
+let g:netrw_dirhist_3='/Users/darrenburgess/Desktop/launch_school/intro_to_programming'
+let g:netrw_dirhist_4='/Users/darrenburgess/Desktop/launch_school/intro_to_programming/01_preparations'
+let g:netrw_dirhist_5='/Users/darrenburgess/Desktop/launch_school/intro_to_programming'
+let g:netrw_dirhist_6='/Users/darrenburgess/Desktop/launch_school/intro_to_programming/06_conditionals'
+let g:netrw_dirhist_7='/Users/darrenburgess/Desktop/launch_school/intro_to_programming'
+let g:netrw_dirhist_8='/Users/darrenburgess/Desktop/launch_school/intro_to_programming/03_variables'
+let g:netrw_dirhist_9='/Users/darrenburgess/Desktop/launch_school/intro_to_programming'
