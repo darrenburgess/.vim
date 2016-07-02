@@ -1,6 +1,7 @@
 let mapleader = "\<space>"
 
 execute pathogen#infect()
+
 set showcmd
 set nocompatible      " We're running Vim, not Vi!
 syntax on             " Enable syntax highlighting
@@ -12,15 +13,11 @@ set mouse=a
 set autoread
 au FocusGained,BufEnter * :silent! !
 set incsearch
+set relativenumber
+set number
 
 " control p plugin
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-"related to orgmode
-filetype plugin indent on
-
-set relativenumber
-set number
 
 " """" vundle settings
 " set the runtime path to include Vundle and initialize
