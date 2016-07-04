@@ -16,6 +16,7 @@ au FocusGained,BufEnter * :silent! !
 set incsearch
 set relativenumber
 set number
+set cursorline
 
 " control p plugin
 set runtimepath^=~/.vim/bundle/ctrlp.vim
