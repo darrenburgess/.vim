@@ -40,6 +40,8 @@
   surround with ''    delete i ' c-r "
   
 # editing
+  recomment           =
+  recomment all       gg=G
   replace one char    r
   delete line         D or dd
   del to eol, insert  C or c$
