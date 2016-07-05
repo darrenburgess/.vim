@@ -25,6 +25,10 @@ set autoindent
 set smartindent
 set number
 
+" color settings
+set t_Co=256
+colors zenburn
+
 " control p plugin
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -80,10 +84,6 @@ noremap! <Right> <Esc>
 " add blank lines
 nnoremap <Enter> :call append(line('.'), '')<CR>
 nnoremap <S-Enter> :call append(line('.')-1, '')<CR>
-
-" color settings
-set t_Co=256
-colors zenburn
 
 " close pair settings and functions
 inoremap ( ()<Esc>i
