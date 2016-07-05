@@ -17,6 +17,11 @@ set incsearch
 set relativenumber
 set number
 set cursorline
+set expandtab
+set tabstop=2 shiftwidth=2 softtabstop=2
+set autoindent
+set smartindent
+set number
 
 " control p plugin
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -30,17 +35,19 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'easymotion/vim-easymotion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " """"" end Vundle
 
-set expandtab
-set tabstop=2 shiftwidth=2 softtabstop=2
-set autoindent
-set smartindent
-set number
+" easy motion settings
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:EasyMotion_smartcase = 1
+nmap s <Plug>(easymotion-overwin-f)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 "folding settings
 set foldmethod=indent   "fold based on indent
@@ -73,7 +80,7 @@ colors zenburn
 
 "key remapping
 inoremap jj <ESC>
-nnoremap <leader><leader> :w<cr>
+nnoremap <leader><leader>w :w<cr>
 nnoremap <leader>r :w<cr>:! ruby %<cr>
 map ,p obinding.pry<ESC>
 
