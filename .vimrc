@@ -1,8 +1,10 @@
+" primary settings
 nnoremap <space> <nop>
 let mapleader = "\<space>"
 
 execute pathogen#infect()
 
+" general settings
 set showcmd
 set nocompatible      " We're running Vim, not Vi!
 syntax on             " Enable syntax highlighting
@@ -26,18 +28,18 @@ set number
 " control p plugin
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-" """" vundle settings
+" vundle settings
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required
+" let vundle manage vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
 
-" All of your Plugins must be added before the following line
+" all of your plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " """"" end Vundle
@@ -49,13 +51,23 @@ nmap s <Plug>(easymotion-overwin-f)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
-"folding settings
+" nerd tree
+let g:NERDTreeWinSize = 30
+map <C-n> :NERDTreeToggle<CR>
+
+" key remapping
+inoremap jj <ESC>
+nnoremap <leader><leader> :w<cr>
+nnoremap <leader>r :w<cr>:! ruby %<cr>
+map ,p obinding.pry<ESC>
+
+" folding settings
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use"
 
-"disable arrow keys
+" disable arrow keys
 noremap  <Up> ""
 noremap! <Up> <Esc>
 noremap  <Down> ""
@@ -65,30 +77,18 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
-
-"add blank lines
+" add blank lines
 nnoremap <Enter> :call append(line('.'), '')<CR>
 nnoremap <S-Enter> :call append(line('.')-1, '')<CR>
 
-"Nerd Tree
-let g:NERDTreeWinSize = 30
-map <C-n> :NERDTreeToggle<CR>
-
-"color settings
+" color settings
 set t_Co=256
 colors zenburn
 
-"key remapping
-inoremap jj <ESC>
-nnoremap <leader><leader>w :w<cr>
-nnoremap <leader>r :w<cr>:! ruby %<cr>
-map ,p obinding.pry<ESC>
-
+" close pair settings and functions
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
 inoremap { {}<Esc>i
-
-"close pair settings and functions
 autocmd Syntax html,vim inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
 inoremap ) <c-r>=ClosePair(')')<CR>
 inoremap ] <c-r>=ClosePair(']')<CR>
