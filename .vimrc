@@ -42,6 +42,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'vim-airline/vim-airline'
 
 " all of your plugins must be added before the following line
 call vundle#end()            " required
@@ -54,6 +55,12 @@ let g:EasyMotion_smartcase = 1
 nmap s <Plug>(easymotion-overwin-f)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+" persistent undo
+set undofile                " Save undo's after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
 
 " nerd tree
 let g:NERDTreeWinSize = 30
@@ -84,6 +91,18 @@ noremap! <Right> <Esc>
 " add blank lines
 nnoremap <Enter> :call append(line('.'), '')<CR>
 nnoremap <S-Enter> :call append(line('.')-1, '')<CR>
+
+" show git branch in status line
+function! GitBranch()
+  let branch = system("git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'")
+  if branch != ''
+    return '   Git Branch: ' . substitute(branch, '\n', '', 'g')
+  en  
+  return ''
+endfunction
+ 
+" minimal status line, only shows git branch
+set statusline=%{GitBranch()}
 
 " close pair settings and functions
 inoremap ( ()<Esc>i
