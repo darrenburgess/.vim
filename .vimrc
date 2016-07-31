@@ -24,6 +24,7 @@ set tabstop=2 shiftwidth=2 softtabstop=2
 set autoindent
 set smartindent
 set number
+set autoread
 
 " color settings
 set t_Co=256
