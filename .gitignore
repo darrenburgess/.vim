@@ -1,4 +1,4 @@
 *.swp
 *.swo
 bundle/L9
-undo/
+undo/*

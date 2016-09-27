@@ -44,6 +44,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-airline/vim-airline'
+Plugin 'mattn/emmet-vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " all of your plugins must be added before the following line
 call vundle#end()            " required
